@@ -40,7 +40,7 @@ function App() {
                 onInputChange={handleSearch}
                 placeholder="Ex: Pikachu"
             />
-            <button onClick={()=> setSearchTerm("")}>clear</button>
+            <button onClick={() => setSearchTerm('')}>clear</button>
 
             <InputWithLabel
                 id="type"
@@ -50,7 +50,7 @@ function App() {
                 onInputChange={handleType}
                 placeholder="Ex: Feu"
             />
-            <button onClick={()=> setTypeTerm("")}>clear</button>
+            <button onClick={() => setTypeTerm('')}>clear</button>
 
             <hr />
             {filteredPokemons.length > 0 ? <List list={filteredPokemons} /> : <p>No results</p>}

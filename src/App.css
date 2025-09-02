@@ -1,6 +1,6 @@
 /* Mise en page globale - ambiance vintage Pokémon */
 body {
-    font-family: "Press Start 2P", cursive, Arial, sans-serif; /* police rétro type GameBoy */
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif; /* police rétro type GameBoy */
     background: linear-gradient(135deg, #e0d5c0, #d6c6a5);
     margin: 0;
     padding: 20px;
