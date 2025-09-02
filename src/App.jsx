@@ -11,12 +11,11 @@ function App() {
     ];
 
     // state
-    const [searchTerm, setSearchTerm] = useState(() => localStorage.getItem('Pikachu') ?? '');
+    const [searchTerm, setSearchTerm] = useState(() => localStorage.getItem('search') || 'Pikachu');
     const [typeTerm, setTypeTerm] = useState('');
 
-
     useEffect(() => {
-        localStorage.setItem('Pikachu', searchTerm);
+        localStorage.setItem('search', searchTerm);
     }, [searchTerm]);
 
     //event
@@ -35,14 +34,15 @@ function App() {
             <h1>Minipokédex</h1>
             <InputWithLabel
                 id="search"
-                label="Search: "
+                label="Search name: "
                 value={searchTerm}
                 type="text"
                 onInputChange={handleSearch}
-                placeholder="Search"
+                placeholder="Ex: Pikachu"
             />
+            <button onClick={()=> setSearchTerm("")}>clear</button>
 
-             <InputWithLabel
+            <InputWithLabel
                 id="type"
                 label="Search type: "
                 value={typeTerm}
@@ -50,13 +50,10 @@ function App() {
                 onInputChange={handleType}
                 placeholder="Ex: Feu"
             />
-            
+            <button onClick={()=> setTypeTerm("")}>clear</button>
+
             <hr />
-            {filteredPokemons.length > 0 ? (
-  <List list={filteredPokemons} />
-) : (
-  <p>No results</p>
-)}
+            {filteredPokemons.length > 0 ? <List list={filteredPokemons} /> : <p>No results</p>}
         </>
     );
 }
@@ -79,7 +76,7 @@ const List = ({ list }) => {
         <ul>
             {list.map((item) => (
                 <li key={item.name}>
-                    {item.name}  ({item.type})
+                    {item.name} ({item.type})
                 </li>
             ))}
         </ul>
