@@ -1,0 +1,59 @@
+/* Mise en page globale */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Titre principal */
+h1 {
+  text-align: center;
+  color: #ff4757;
+}
+
+/* Champ de recherche */
+label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+input:focus {
+  border: 1px solid #ff4757;
+}
+
+/* Liste des Pokémons */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background: white;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+li:hover {
+  transform: scale(1.02);
+}
+
+/* Texte "No results" */
+p {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}

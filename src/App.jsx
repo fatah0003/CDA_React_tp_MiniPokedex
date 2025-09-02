@@ -12,6 +12,8 @@ function App() {
 
     // state
     const [searchTerm, setSearchTerm] = useState(() => localStorage.getItem('Pikachu') ?? '');
+    const [typeTerm, setTypeTerm] = useState('');
+
 
     useEffect(() => {
         localStorage.setItem('Pikachu', searchTerm);
@@ -19,11 +21,13 @@ function App() {
 
     //event
     const handleSearch = (e) => setSearchTerm(e.target.value);
+    const handleType = (e) => setTypeTerm(e.target.value);
 
     //Search
     const filteredPokemons = pokemons.filter((pokemon) => {
         const byName = pokemon.name.toLowerCase().includes(searchTerm.toLowerCase());
-        return byName;
+        const byType = pokemon.type.toLowerCase().includes(typeTerm.toLowerCase());
+        return byName && byType;
     });
 
     return (
@@ -37,6 +41,16 @@ function App() {
                 onInputChange={handleSearch}
                 placeholder="Search"
             />
+
+             <InputWithLabel
+                id="type"
+                label="Search type: "
+                value={typeTerm}
+                type="text"
+                onInputChange={handleType}
+                placeholder="Ex: Feu"
+            />
+            
             <hr />
             {filteredPokemons.length > 0 ? (
   <List list={filteredPokemons} />
