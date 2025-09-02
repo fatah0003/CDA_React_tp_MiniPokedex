@@ -1,6 +1,6 @@
 /* Mise en page globale - ambiance vintage Pokémon */
 body {
-    font-family: 'Press Start 2P', cursive, Arial, sans-serif; /* police rétro type GameBoy */
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif;
     background: linear-gradient(135deg, #e0d5c0, #d6c6a5);
     margin: 0;
     padding: 20px;
@@ -31,7 +31,7 @@ label {
 input {
     padding: 8px;
     border: 2px solid #7f8c8d;
-    border-radius: 0; /* carré, style rétro */
+    border-radius: 0; 
     outline: none;
     background-color: #fdf6e3;
     font-family: inherit;
@@ -50,7 +50,7 @@ button {
     color: white;
     font-weight: bold;
     border: 2px solid #2c2c2c;
-    border-radius: 50%; /* effet Pokéball */
+    border-radius: 50%;
     width: 50px;
     height: 50px;
     cursor: pointer;
