@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
+import Pokemondetails from './pages/PokemonDetail'
 import './App.css';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
                 <main>
                     <Routes>
                         <Route path='/' element={<HomePage pokemons={pokemons} setPokemons ={setPokemons} />}/>
-                        <Route path='/pokemon/:name' element={}/>
+                        <Route path='/pokemon/:id' element={<Pokemondetails pokemos={pokemons} />}/>
                         {/* <Route path='/favorites' element={}/>
                         <Route path='/team' element={}/>
                         <Route path='/profile' element={}/> */}
