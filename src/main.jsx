@@ -1,10 +1,15 @@
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { BrowserRouter } from "react-router-dom"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import { PokemonProvider } from "./context/PokemonProvider";
 
-createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <PokemonProvider>
+        <App />
+      </PokemonProvider>
+    </BrowserRouter>
+  </React.StrictMode>
+);
