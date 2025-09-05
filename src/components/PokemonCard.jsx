@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { PokemonContext } from "../context/PokemonContext";
 
 const PokemonCard = ({ pokemon }) => {
-  const { addFavorite } = useContext(PokemonContext);
+  const { addFavorite, addToTeam } = useContext(PokemonContext);
 
   return (
     <div>
@@ -12,6 +12,9 @@ const PokemonCard = ({ pokemon }) => {
       <Link to={`/pokemon/${pokemon.id}`}>Détails</Link>
       <button onClick={() => addFavorite(pokemon)}>
         Ajouter aux favoris
+      </button>
+      <button onClick={() => addToTeam(pokemon)}>
+        Ajouter à ma team
       </button>
     </div>
   );
